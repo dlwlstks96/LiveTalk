@@ -17,7 +17,6 @@ public class MessageController {
     @SendTo("/topic/submitMessages")
     public Message sendMessage(SubmitMessage message) throws Exception {
         return new Message(HtmlUtils.htmlEscape(message.getMessage()));
-        //return new Greeting("sssss");
     }
 
 }
