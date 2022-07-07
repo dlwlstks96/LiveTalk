@@ -1,4 +1,4 @@
-package com.webSocket;
+package com.controller;
 
 import com.domain.SubmitMessage;
 import org.springframework.messaging.handler.annotation.MessageMapping;
