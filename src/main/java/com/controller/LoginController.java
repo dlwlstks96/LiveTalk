@@ -7,16 +7,23 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class LoginController {
 
-    @GetMapping("/login")
-    public String form() {
+    //첫 입장 시 로그인 폼 출력
+    @GetMapping("/")
+    public String handleMain() {
         return "loginform";
     }
 
-
-    @PostMapping("/login")
+    //입력 정보 받은 후 mainchat으로 리다이렉트
+    @PostMapping("/")
     public String submit(Member member) {
         System.out.println(member.getUserName());
-        return "index";
+        return "redirect:mainchat";
+    }
+
+    //mainchat 요청 시 메인 채팅룸 출력
+    @GetMapping("/mainchat")
+    public String handleMainchat() {
+        return "mainchat";
     }
 
 }
