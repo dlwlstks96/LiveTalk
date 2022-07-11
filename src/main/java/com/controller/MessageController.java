@@ -1,6 +1,6 @@
 package com.controller;
 
-import com.domain.SubmitMessage;
+import com.websocket.SubmitMessage;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
