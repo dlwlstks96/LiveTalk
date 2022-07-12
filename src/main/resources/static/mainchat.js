@@ -1,5 +1,7 @@
 var stompClient = null;
 
+var userName = sessionStorage.getItem("userName");
+
 function setConnected(connected) {
     $("#connect").prop("disabled", connected);
     $("#disconnect").prop("disabled", !connected);
@@ -33,7 +35,7 @@ function disconnect() {
 }
 
 function sendMessage() {
-    stompClient.send("/app/client", {}, JSON.stringify({'message': $("#message").val()}));
+    stompClient.send("/app/client", {}, JSON.stringify({'message': userName + ": " + $("#message").val()}));
     var input = document.getElementById("message");
     input.value = null;
 }

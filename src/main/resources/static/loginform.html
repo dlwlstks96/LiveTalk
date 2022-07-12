@@ -7,9 +7,17 @@
 <body>
     <form action="/" method="post">
         <label>
-            Name: <input name="userName" type="text">
-            <input type="submit" value="입장">
+            Name: <input id="userName" name="userName" type="text">
+            <input type="submit" value="입장" onclick="OnSubmit()">
         </label>
     </form>
+
+    <script>
+        function OnSubmit() {
+            var userName = document.getElementById("userName");
+            sessionStorage.setItem("userName", userName.value);
+        }
+    </script>
+
 </body>
 </html>
