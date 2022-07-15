@@ -4,6 +4,7 @@ import com.domain.Member;
 import com.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class MemberDao {
@@ -20,8 +21,17 @@ public class MemberDao {
         return member;
     }
 
+    public Boolean findMember(Member member) {
+        Boolean findResult = memberRepository.findMember(member);
+        if (findResult == true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     //레포지토리 전체 정보 반환
-    public List<Member> findAllMember() {
+    public HashMap<Member, Integer> findAllMember() {
         return memberRepository.findAll();
     }
 
